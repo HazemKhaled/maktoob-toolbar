@@ -1,1 +1,63 @@
 @CHARSET "UTF-8";
+
+
+
+.mtoolbar{
+background:transparent url(images/bak.gif) repeat scroll 0 0;
+height:30px;
+font-family:tahoma;
+font-size:12px;
+line-height:30px;
+margin:0 auto;
+overflow:hidden;
+width:95%;
+text-align:center;
+}
+.mtoolbar a{
+color: #16387C;
+text-decoration:none;
+}
+.mtoolbar a:hover{
+color: #369;
+text-decoration:underline;
+}
+.mtoolbar-rightCorner, .mtoolbar-leftCorner{
+background-repeat: no-repeat;
+height:30px;
+width:5px;
+}
+.mtoolbar-rightCorner {
+background-image:url(images/right.png);
+float:right;
+}
+.mtoolbar-leftCorner{
+background-image:url(images/left.png);
+float:left;
+}
+.mtoolbar ul, .mtoolbar li{
+list-style:none;
+margin:0;
+padding:0;
+}
+ul.mtoolbar-links, .mtoolbar-time, .mtoolbar-prayTimes, .mtoolbar-weather, .mtoolbar-country{
+display:block;
+float:left;
+min-width:150px;
+}
+ul.mtoolbar-links{
+display:block;
+float:right;
+}
+ul.mtoolbar-links li{
+	border-left:1px solid silver;
+	float:right;
+	padding:0 10px;
+}
+ul.mtoolbar-links li a{}
+ul.mtoolbar-links ul{
+	left:999999px;
+	position:absolute;
+}
+ul.mtoolbar-links ul li{float:none;}
+
+.clear{clear: both;}
