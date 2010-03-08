@@ -262,7 +262,7 @@ PrayTime.prototype.floatToTime12 = function(time, noSuffix)
 	time = this.fixhour(time+ 0.5/ 60);  // add 0.5 minutes to round
 	var hours = Math.floor(time); 
 	var minutes = Math.floor((time- hours)* 60);
-	var suffix = hours >= 12 ? ' pm' : ' am';
+	var suffix = hours >= 12 ? ' م' : ' ص';
 	hours = (hours+ 12 -1)% 12+ 1;
 	return hours+':'+ this.twoDigitsFormat(minutes)+ (noSuffix ? '' : suffix);
 }
