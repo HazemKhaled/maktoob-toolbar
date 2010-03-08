@@ -6,9 +6,12 @@
 	<link type="text/css" rel="stylesheet" href="style.css" />
 	<script type="text/javascript" src="../libs/jquery.min.js"></script>
 	<script type="text/javascript" src="../libs/jquery.mtoobbar.js"></script>
+	<script type="text/javascript" src="../libs/prayTime.js"></script>
 	<script type="text/javascript">
 		$(document).ready( function () {
-			$('#toolbar1').mtoolbar();
+			$('#toolbar1').mtoolbar( {
+					
+				} );
 		} );
 	</script>
 </head>
@@ -35,11 +38,11 @@
 
 		<div class="mtoolbar-country">الدول</div>
 		<div class="mtoolbar-weather">القاهرة 15°</div>
-		<div class="mtoolbar-prayTimes">صلاة الفجر 04:54 صباحاً</div>
-		<div class="mtoolbar-time">الثلاثاء 02 مارس 2010 م</div>
-		
+		<ul class="mtoolbar-prayTimes"></ul>
+		<div class="mtoolbar-time"></div>
+
 		<div class="clear"></div>
-		
+
 		<ul class="mtoolbar-flags">
 			<li><a href="#">مصر</a></li>
 			<li><a href="#">السعودية</a></li>
