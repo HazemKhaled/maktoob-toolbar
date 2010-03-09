@@ -9,9 +9,7 @@
 	<script type="text/javascript" src="../libs/prayTime.js"></script>
 	<script type="text/javascript">
 		$(document).ready( function () {
-			$('#toolbar1').mtoolbar( {
-					
-				} );
+			$('#toolbar1').mtoolbar();
 		} );
 	</script>
 </head>
@@ -36,37 +34,20 @@
 			</li>
 		</ul>
 
-		<div class="mtoolbar-country">الدول</div>
-		<div class="mtoolbar-weather">القاهرة 15°</div>
+		<div class="mtoolbar-country">
+			<span>الدول</span>
+			<ul class="mtoolbar-flags"></ul>
+		</div>
+		<div class="mtoolbar-weather">
+			<span class="capitalName"></span>
+			<span class="weatherNow">15°</span>
+		</div>
 		<ul class="mtoolbar-prayTimes"></ul>
 		<div class="mtoolbar-time"></div>
 
 		<div class="clear"></div>
 
-		<ul class="mtoolbar-flags">
-			<li><a href="#">مصر</a></li>
-			<li><a href="#">السعودية</a></li>
-			<li><a href="#">الأمارات</a></li>
-			<li><a href="#">الأردن</a></li>
-			<li><a href="#">اليمن</a></li>
-			<li><a href="#">عمان</a></li>
-			<li><a href="#">قطر</a></li>
-			<li><a href="#">البحرين</a></li>
-			<li><a href="#">الكويت</a></li>
-			<li><a href="#">العراق</a></li>
-			<li><a href="#">سوريا</a></li>
-			<li><a href="#">لبنان</a></li>
-			<li><a href="#">فلسطين</a></li>
-			<li><a href="#">ليبيا</a></li>
-			<li><a href="#">الجزائر</a></li>
-			<li><a href="#">المغرب</a></li>
-			<li><a href="#">تونس</a></li>
-			<li><a href="#">موريتانيا</a></li>
-			<li><a href="#">السودان</a></li>
-			<li><a href="#">جيبوتي</a></li>
-			<li><a href="#">الصومال</a></li>
-			<li><a href="#">جزر القمر</a></li>
-		</ul>
+
 		<div class="mtoolbar-leftCorner"></div>
 	</div>
 

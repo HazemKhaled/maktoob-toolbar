@@ -62,3 +62,12 @@ ul.mtoolbar-links ul li{float:none;}
 
 .clear{clear: both;}
 .mtoolbar-prayTimes{}
+.mtoolbar-flags{
+display:none;
+background-color: silver;
+position:absolute;
+width:150px;
+}
+.mtoolbar-flags li{
+cursor: pointer;
+}
