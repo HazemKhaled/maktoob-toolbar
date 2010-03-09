@@ -77,8 +77,12 @@ function myDate()
 
 function myPray( opt )
 {
+
+	// get the default country
+	var contry = opt.countries[opt.defaultCountry];
+
 	//define the configration
-	prayTime.setCalcMethod( opt.prayMethod );
+	prayTime.setCalcMethod(  isNaN(contry.prayMethod) ? opt.prayMethod : contry.prayMethod );
 	prayTime.setTimeFormat( prayTime.Time12 );
 	prayTime.timeNames[0] = 'صلاة الفجر';
 	prayTime.timeNames[1] = 'شروق الشمس';
@@ -87,9 +91,6 @@ function myPray( opt )
 	prayTime.timeNames[4] = 'غروب الشمس';
 	prayTime.timeNames[5] = 'صلاة المغرب';
 	prayTime.timeNames[6] = 'صلاة العشاء';
-	
-	// get the default country
-	var contry = opt.countries[opt.defaultCountry];
 
 
 	var date = new Date();
@@ -99,8 +100,8 @@ function myPray( opt )
 	
 	for(var i = 0; i < times.length; i++)
 	{
-		str += '<li><b>'+ prayTime.timeNames[i]+ '</b>';
-		str += '<span>'+ times[i]+ '</span></li>';
+		str += '<li><b>' + prayTime.timeNames[i] + '</b>';
+		str += '<span>'+ times[i] + '</span></li>';
 	}//TODO: scroll to next pray
 
 	return str;
