@@ -66,6 +66,7 @@
 
 				$('.mtoolbar-flags li').live( 'click', function () {
 
+					//TODO: save contry by cookie
 					options.defaultCountry  = $(this).attr('rel');
 					obj.find('.mtoolbar-flags').slideUp(300);
 					setDefaultCountry( obj, options );
@@ -77,9 +78,8 @@
 	};
 })(jQuery);
 
-function myDate()
+function myDate( obj, country )
 {
-	//TODO: support timezone
 	var weekday = new Array(7);
 	weekday[0] = "الأحد";
 	weekday[1] = "الأثنين";
@@ -104,8 +104,14 @@ function myDate()
 	months[11] = 'ديسمبر';
 	
 	var d = new Date();
+	localTime = d.getTime();
+	localOffset = d.getTimezoneOffset() * 60000;
+	utc = localTime + localOffset;
+	d = new Date( utc + ( 3600000 * country.timeZone ) );
 	
-	return weekday[d.getDay()] + ' ' + d.getDate() + ' ' + months[d.getMonth()] + ' ' + d.getFullYear();
+	date = weekday[d.getDay()] + ' ' + d.getDate() + ' ' + months[d.getMonth()] + ' ' + d.getFullYear();
+	time = ( d.getHours() % 12 || 12 ) + ':' + (( d.getMinutes() < 10 ? '0' : '') + d.getMinutes() ) + ' ' + ( d.getHours() < 12 ? 'ص' : 'م' );
+	obj.find('.mtoolbar-time').text( date ).attr( 'title', time );
 }
 
 function myPray( options )
@@ -163,7 +169,7 @@ function setDefaultCountry( obj, options )
 
 	if ( options.useTime == true )
 	{
-		obj.find('.mtoolbar-time').html( myDate() );
+		myDate( obj, country );
 	}
 
 	if ( options.usePray == true )
