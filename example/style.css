@@ -3,13 +3,16 @@
 
 
 .mtoolbar{
-background:transparent url(images/bak.gif) repeat scroll 0 0;
+background:url(images/bak.gif);
+border-color:silver;
+border-style:solid;
+border-width:0 1px;
 height:30px;
 font-family:tahoma;
 font-size:12px;
 line-height:30px;
 margin:0 auto;
-overflow:hidden;
+/*overflow:hidden;*/
 width:95%;
 text-align:center;
 }
@@ -25,14 +28,6 @@ text-decoration:underline;
 background-repeat: no-repeat;
 height:30px;
 width:5px;
-}
-.mtoolbar-rightCorner {
-background-image:url(images/right.png);
-float:right;
-}
-.mtoolbar-leftCorner{
-background-image:url(images/left.png);
-float:left;
 }
 .mtoolbar ul, .mtoolbar li{
 list-style:none;
@@ -55,19 +50,52 @@ ul.mtoolbar-links li{
 }
 ul.mtoolbar-links li a{}
 ul.mtoolbar-links ul{
-	left:999999px;
-	position:absolute;
+margin-left:-75px;
 }
-ul.mtoolbar-links ul li{float:none;}
+ul.mtoolbar-links ul li{
+border-color:silver;
+border-right:1px solid silver;
+border-style:none solid solid;
+border-width:medium 1px 1px;
+float:none;
+width:125px;
+}
 
 .clear{clear: both;}
 .mtoolbar-prayTimes{}
-.mtoolbar-flags{
-display:none;
-background-color: silver;
-position:absolute;
-width:150px;
-}
+.mtoolbar-prayTimes li{display:none}
+.mtoolbar-prayTimes li:last-child{display:block}
 .mtoolbar-flags li{
 cursor: pointer;
+border-color:silver;
+border-style:none solid solid;
+border-width:medium 1px 1px;
+float:none;
+width:125px;
 }
+
+/* 
+	LEVEL ONE
+*/
+ul.mtbarDropdown{ position: relative;  }
+ul.mtbarDropdown li a{ display: block; width: 100% }
+ul.mtbarDropdown li:last-child a{ } /* Doesn't work in IE */
+ul.mtbarDropdown li.hover,
+ul.mtbarDropdown li:hover{ position: relative; }
+ul.mtbarDropdown li.hover a{  }
+
+
+/* 
+	LEVEL TWO
+*/
+ul.mtbarDropdown ul{ visibility: hidden; position: absolute; top: 100%; left: 0; }
+ul.mtbarDropdown ul li{  }
+									  
+/* IE 6 & 7 Needs Inline Block */
+ul.mtbarDropdown ul li a{ display: inline-block; } 
+
+/* 
+	LEVEL THREE
+*/
+ul.mtbarDropdown ul ul{ left: 100%; top: 0; }
+ul.mtbarDropdown li:hover > ul{ visibility: visible; }

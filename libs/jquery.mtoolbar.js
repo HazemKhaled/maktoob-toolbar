@@ -50,25 +50,28 @@
 	return this.each(function() {
 		obj = $(this);
 
+		// drobdown menus
+	    $("ul.mtbarDropdown li").hover(function(){
+	        
+	        $(this).addClass("hover");
+	        $('ul:first',this).css('visibility', 'visible');
+	    
+	    }, function(){
+	    
+	        $(this).removeClass("hover");
+	        $('ul:first',this).css('visibility', 'hidden');
+	    
+	    });
+		
 			if ( options.useCountry == true )
 			{
 				obj.find('.mtoolbar-flags').html( myFlags( obj, options ) );
-
-				// flags menu
-				obj.find('.mtoolbar-country').hover( function () {
-					obj.find('.mtoolbar-flags').css(
-							{top: obj.find('.mtoolbar-country').position()['top'] + obj.height(), left: obj.find('.mtoolbar-country').position()['left']}
-					).slideDown(300);
-				}, function () {
-					obj.find('.mtoolbar-flags').slideUp(300);
-				} );
-				
 
 				$('.mtoolbar-flags li').live( 'click', function () {
 
 					//TODO: save contry by cookie
 					options.defaultCountry  = $(this).attr('rel');
-					obj.find('.mtoolbar-flags').slideUp(300);
+					obj.find('.mtoolbar-flags').css('visibility', 'hidden');
 					setDefaultCountry( obj, options );
 					
 				});
