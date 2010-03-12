@@ -8,28 +8,29 @@
 					useWeather	: true,
 					useCountry	: true,
 					countries	: {
-					         	   	'eg': {name: 'مصر',			capital: 'القاهرة',	longitude: 31.36, latitude: 30.05, timeZone: 2, prayMethod: 5},
-									'ae': {name: 'الأمارات',		capital: 'أبو ظبي',	longitude: 54.36, latitude: 24.46, timeZone: 4},
-									'sa': {name: 'السعودية',	capital: 'الرياض',	longitude: 46.71, latitude: 24.63, timeZone: 3},
-									'jo': {name: 'الأردن',		capital: 'عمان',	longitude: 35.93, latitude: 31.94, timeZone: 2},
-									'ye': {name: 'اليمن',		capital: 'صنعاء',	longitude: 44.20, latitude: 15.40, timeZone: 3},
-									'om': {name: 'عمان',		capital: 'مسقط',	longitude: 58.54, latitude: 23.61, timeZone: 4},
-									'qa': {name: 'قطر',			capital: 'الدوحة',	longitude: 51.53, latitude: 25.28, timeZone: 3},
-									'bh': {name: 'البحرين',		capital: 'المنامة',	longitude: 50.58, latitude: 26.21, timeZone: 3},
-									'kw': {name: 'الكويت',		capital: 'الكويت',	longitude: 47.97, latitude: 29.36, timeZone: 3},
-									'iq': {name: 'العراق',		capital: 'بغداد',	longitude: 44.43, latitude: 33.33, timeZone: 3},
-									'sy': {name: 'سوريا',		capital: 'دمشق',	longitude: 36.27, latitude: 33.51, timeZone: 2},
-									'lb': {name: 'لبنان',		capital: 'بيروت',	longitude: 35.53, latitude: 52.39, timeZone: 2},
-									'ps': {name: 'فلسطين',		capital: 'القدس',	longitude: 35.21, latitude: 31.78, timeZone: 3},
-									'ly': {name: 'ليبيا',		capital: 'طرابلس',	longitude: 13.18, latitude: 32.90, timeZone: 2},
-									'dz': {name: 'الجزائر',		capital: 'الجزائر',	longitude:  5.05, latitude: 36.28, timeZone: 1},
-									'ma': {name: 'المغرب',		capital: 'الرباط',	longitude: -6.83, latitude: 34.03, timeZone: 0},
-									'tn': {name: 'تونس',		capital: 'تونس',	longitude: 10.17, latitude: 36.80, timeZone: 1},
-									'mr': {name: 'موريتانيا',	capital: 'نواكشوط',	longitude:-15.95, latitude: 18.10, timeZone: 0},
-									'sd': {name: 'السودان',		capital: 'الخرطوم',	longitude: 32.53, latitude: 15.63, timeZone: 3},
-									'so': {name: 'الصومال',		capital: 'مقديشيو',	longitude: 45.35, latitude:  2.03, timeZone: 3},
-									'km': {name: 'جزر القمر',	capital: 'موروني',	longitude: 43.20, latitude:-11.75, timeZone: 3},
-									'dj': {name: 'جيبوتي',		capital: 'جيبوتي',	longitude: 43.16, latitude: 11.60, timeZone: 3}
+									'ae': {name: 'الأمارات',		capital: 'أبو ظبي',	longitude: 54.36, latitude: 24.46, timeZone: 4, code: 'AEXX0001'},
+									'bh': {name: 'البحرين',		capital: 'المنامة',	longitude: 50.58, latitude: 26.21, timeZone: 3, code: 'BAXX0001'},
+									'dj': {name: 'جيبوتي',		capital: 'جيبوتي',	longitude: 43.16, latitude: 11.60, timeZone: 3, code: 'DJXX0001'},
+									'dz': {name: 'الجزائر',		capital: 'الجزائر',	longitude:  5.05, latitude: 36.28, timeZone: 1, code: 'AGXX0001'},
+									'eg': {name: 'مصر',			capital: 'القاهرة',	longitude: 31.39, latitude: 30.12, timeZone: 2, code: 'EGXX0004', prayMethod: 5},
+									'iq': {name: 'العراق',		capital: 'بغداد',	longitude: 44.43, latitude: 33.33, timeZone: 3, code: 'IZXX0008'},
+									'jo': {name: 'الأردن',		capital: 'عمان',	longitude: 35.93, latitude: 31.94, timeZone: 2, code: 'JOXX0002'},
+									'km': {name: 'جزر القمر',	capital: 'موروني',	longitude: 43.20, latitude:-11.75, timeZone: 3, code: 'CNXX0003'},
+									'kw': {name: 'الكويت',		capital: 'الكويت',	longitude: 47.97, latitude: 29.36, timeZone: 3, code: 'KUXX0003'},
+									'lb': {name: 'لبنان',		capital: 'بيروت',	longitude: 35.53, latitude: 52.39, timeZone: 2, code: 'LEXX0003'},
+									'ly': {name: 'ليبيا',		capital: 'طرابلس',	longitude: 13.18, latitude: 32.90, timeZone: 2, code: 'LYXX0009'},
+									'ma': {name: 'المغرب',		capital: 'الرباط',	longitude: -6.83, latitude: 34.03, timeZone: 0, code: 'MOXX0007'},
+									'mr': {name: 'موريتانيا',	capital: 'نواكشوط',	longitude:-15.95, latitude: 18.10, timeZone: 0, code: 'MRXX0004'},
+									'om': {name: 'عمان',		capital: 'مسقط',	longitude: 58.54, latitude: 23.61, timeZone: 4, code: 'MUXX0003'},
+									'ps': {name: 'فلسطين',		capital: 'القدس',	longitude: 35.21, latitude: 31.78, timeZone: 3, code: 'ISXX0010'},
+									'qa': {name: 'قطر',			capital: 'الدوحة',	longitude: 51.53, latitude: 25.28, timeZone: 3, code: 'QAXX0003'},
+									'sa': {name: 'السعودية',	capital: 'الرياض',	longitude: 46.71, latitude: 24.63, timeZone: 3, code: 'SAXX0017'},
+									'sd': {name: 'السودان',		capital: 'الخرطوم',	longitude: 32.53, latitude: 15.63, timeZone: 3, code: 'SUXX0002'},
+									'so': {name: 'الصومال',		capital: 'مقديشيو',	longitude: 45.35, latitude:  2.03, timeZone: 3, code: 'SOXX0002'},
+									'sy': {name: 'سوريا',		capital: 'دمشق',	longitude: 36.27, latitude: 33.51, timeZone: 2, code: 'SYXX0004'},
+									'tn': {name: 'تونس',		capital: 'تونس',	longitude: 10.17, latitude: 36.80, timeZone: 1, code: 'TSXX0010'},
+									'ye': {name: 'اليمن',		capital: 'صنعاء',	longitude: 44.20, latitude: 15.40, timeZone: 3, code: 'YMXX0005'}
+									
 					},
 					defaultCountry: 'eg',
 					/*
@@ -42,7 +43,8 @@
 					 * 6 : Custom Setting
 					 * 7 : Institute of Geophysics, University of Tehran
 					 */
-					prayMethod	: 4
+					prayMethod	: 4,
+					weatherServer : '../libs/mtoolbar.php'
 	};
 
 	var options = $.extend(defaults, options);
@@ -81,6 +83,21 @@
 	};
 })(jQuery);
 
+function myFlags( obj, options )
+{
+	var str = '';
+	
+	for ( var i in options.countries )
+	{
+		if ( i == options.defaultCountry )
+		{
+			setDefaultCountry( obj, options );
+		}
+		str+= '<li class="flag_' + i + '" rel="' + i + '">' + options.countries[i].name + '</li>';
+	}
+
+	return str;
+}
 function myDate( obj, country )
 {
 	var weekday = new Array(7);
@@ -116,7 +133,12 @@ function myDate( obj, country )
 	time = ( d.getHours() % 12 || 12 ) + ':' + (( d.getMinutes() < 10 ? '0' : '') + d.getMinutes() ) + ' ' + ( d.getHours() < 12 ? 'ص' : 'م' );
 	obj.find('.mtoolbar-time').text( date ).attr( 'title', time );
 }
-
+function weather( obj, options )
+{
+	$.post( options.weatherServer, {code: options.countries[options.defaultCountry].code}, function ( data ) {
+		obj.find('.weatherNow').text( data.tmp + '°' ).attr('class', '').addClass('weatherNow weather' + data.icon);
+	}, 'json' );
+}
 function myPray( options )
 {
 
@@ -142,32 +164,19 @@ function myPray( options )
 	
 	for(var i = 0; i < times.length; i++)
 	{
+		if ( i == 1 || i == 4)
+			continue;
 		str += '<li><b>' + prayTime.timeNames[i] + '</b>';
 		str += '<span>'+ times[i] + '</span></li>';
 	}//TODO: scroll to next pray
 
 	return str;
 }
-function myFlags( obj, options )
-{
-	var str = '';
-	
-	for ( var i in options.countries )
-	{
-		if ( i == options.defaultCountry )
-		{
-			setDefaultCountry( obj, options );
-		}
-		str+= '<li class="flag_' + i + '" rel="' + i + '">' + options.countries[i].name + '</li>';
-	}
-	
-	return str;
-}
 function setDefaultCountry( obj, options )
 {
 	var country = options.countries[options.defaultCountry];
 	
-	obj.find('.mtoolbar-country').addClass( 'flag_' + options.defaultCountry ).find('span').text( country.name );
+	obj.find('.mtoolbar-country').attr('class', '').addClass( 'mtoolbar-country mtbarDropdown flag_' + options.defaultCountry ).find('span').text( country.name );
 	obj.find('.mtoolbar-weather .capitalName').text( country.capital );
 
 	if ( options.useTime == true )
@@ -178,5 +187,10 @@ function setDefaultCountry( obj, options )
 	if ( options.usePray == true )
 	{
 		obj.find('.mtoolbar-prayTimes').html( myPray( options ) );
+	}
+	
+	if ( options.useWeather == true )
+	{
+		weather( obj, options );
 	}
 }

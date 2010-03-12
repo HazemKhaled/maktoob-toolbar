@@ -99,3 +99,58 @@ ul.mtbarDropdown ul li a{ display: inline-block; }
 */
 ul.mtbarDropdown ul ul{ left: 100%; top: 0; }
 ul.mtbarDropdown li:hover > ul{ visibility: visible; }
+
+.weatherNow{
+background: no-repeat left;
+display:block;
+float:left;
+line-height:30px;
+padding-left:32px;
+}
+.weather01{background-image: url(images/icons/01.png)}
+.weather02{background-image: url(images/icons/02.png)}
+.weather03{background-image: url(images/icons/03.png)}
+.weather04{background-image: url(images/icons/04.png)}
+.weather05{background-image: url(images/icons/05.png)}
+.weather06{background-image: url(images/icons/06.png)}
+.weather07{background-image: url(images/icons/07.png)}
+.weather08{background-image: url(images/icons/08.png)}
+.weather09{background-image: url(images/icons/09.png)}
+.weather10{background-image: url(images/icons/10.png)}
+.weather11{background-image: url(images/icons/11.png)}
+.weather12{background-image: url(images/icons/12.png)}
+.weather13{background-image: url(images/icons/13.png)}
+.weather14{background-image: url(images/icons/14.png)}
+.weather15{background-image: url(images/icons/15.png)}
+.weather16{background-image: url(images/icons/16.png)}
+.weather17{background-image: url(images/icons/17.png)}
+.weather18{background-image: url(images/icons/18.png)}
+.weather19{background-image: url(images/icons/19.png)}
+.weather20{background-image: url(images/icons/20.png)}
+.weather21{background-image: url(images/icons/21.png)}
+.weather22{background-image: url(images/icons/22.png)}
+.weather23{background-image: url(images/icons/23.png)}
+.weather24{background-image: url(images/icons/24.png)}
+.weather25{background-image: url(images/icons/25.png)}
+.weather26{background-image: url(images/icons/26.png)}
+.weather27{background-image: url(images/icons/27.png)}
+.weather28{background-image: url(images/icons/28.png)}
+.weather29{background-image: url(images/icons/29.png)}
+.weather30{background-image: url(images/icons/30.png)}
+.weather31{background-image: url(images/icons/31.png)}
+.weather32{background-image: url(images/icons/32.png)}
+.weather33{background-image: url(images/icons/33.png)}
+.weather34{background-image: url(images/icons/34.png)}
+.weather35{background-image: url(images/icons/35.png)}
+.weather36{background-image: url(images/icons/36.png)}
+.weather37{background-image: url(images/icons/37.png)}
+.weather38{background-image: url(images/icons/38.png)}
+.weather39{background-image: url(images/icons/39.png)}
+.weather40{background-image: url(images/icons/40.png)}
+.weather41{background-image: url(images/icons/41.png)}
+.weather42{background-image: url(images/icons/42.png)}
+.weather43{background-image: url(images/icons/43.png)}
+.weather44{background-image: url(images/icons/44.png)}
+.weather45{background-image: url(images/icons/45.png)}
+.weather46{background-image: url(images/icons/46.png)}
+.weather47{background-image: url(images/icons/47.png)}
