@@ -6,7 +6,7 @@
 if ( !empty( $_POST['code'] ) )
 {
 	$filePath = 'cash/' . $_POST['code'] . '.json';
-	if ( file_exists( $filePath ) && (time() - filemtime( $filePath )) <= ( 60 * 60 * 12) )
+	if ( file_exists( $filePath ) && (time() - filemtime( $filePath )) <= ( 60 * 60) )
 	{
 		$data = file_get_contents( $filePath );
 	}
