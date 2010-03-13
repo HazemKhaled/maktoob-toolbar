@@ -30,7 +30,7 @@
 									'sy': {name: 'سوريا',		capital: 'دمشق',	longitude: 36.27, latitude: 33.51, timeZone: 2, code: 'SYXX0004'},
 									'tn': {name: 'تونس',		capital: 'تونس',	longitude: 10.17, latitude: 36.80, timeZone: 1, code: 'TSXX0010'},
 									'ye': {name: 'اليمن',		capital: 'صنعاء',	longitude: 44.20, latitude: 15.40, timeZone: 3, code: 'YMXX0005'}
-									
+
 					},
 					defaultCountry: 'eg',
 					/*
@@ -64,7 +64,7 @@
 	        $('ul:first',this).css('visibility', 'hidden');
 	    
 	    });
-		
+
 			if ( options.useCountry == true )
 			{
 				obj.find('.mtoolbar-flags').html( myFlags( obj, options ) );
@@ -75,7 +75,7 @@
 					options.defaultCountry  = $(this).attr('rel');
 					obj.find('.mtoolbar-flags').css('visibility', 'hidden');
 					setDefaultCountry( obj, options );
-					
+
 				});
 			}
 
@@ -86,7 +86,7 @@
 function myFlags( obj, options )
 {
 	var str = '';
-	
+
 	for ( var i in options.countries )
 	{
 		if ( i == options.defaultCountry )
@@ -108,7 +108,7 @@ function myDate( obj, country )
 	weekday[4] = "الخميس";
 	weekday[5] = "الجمعة";
 	weekday[6] = "السبت";
-	
+
 	var months = new Array(12);
 	months[0] = 'يناير';
 	months[1] = 'فبراير';
@@ -122,13 +122,13 @@ function myDate( obj, country )
 	months[9] = 'أكتوبر';
 	months[10] = 'نوفمبر';
 	months[11] = 'ديسمبر';
-	
+
 	var d = new Date();
 	localTime = d.getTime();
 	localOffset = d.getTimezoneOffset() * 60000;
 	utc = localTime + localOffset;
 	d = new Date( utc + ( 3600000 * country.timeZone ) );
-	
+
 	date = weekday[d.getDay()] + ' ' + d.getDate() + ' ' + months[d.getMonth()] + ' ' + d.getFullYear();
 	time = ( d.getHours() % 12 || 12 ) + ':' + (( d.getMinutes() < 10 ? '0' : '') + d.getMinutes() ) + ' ' + ( d.getHours() < 12 ? 'ص' : 'م' );
 	obj.find('.mtoolbar-time').text( date ).attr( 'title', time );
@@ -139,7 +139,7 @@ function weather( obj, options )
 		obj.find('.weatherNow').text( data.tmp + '°' ).attr('class', '').addClass('weatherNow weather' + data.icon);
 	}, 'json' );
 }
-function myPray( options )
+function myPray( obj, options )
 {
 
 	// get the default country
@@ -160,32 +160,33 @@ function myPray( options )
 	var date = new Date();
 	var times = prayTime.getPrayerTimes(date, country.latitude, country.longitude, country.timeZone);
 
-	if ( prayTime.nextPray === 1 || prayTime.nextPray === 4)
+	if ( prayTime.nextPray === 1 || prayTime.nextPray === 4)//if Sunrise or Sunset display zuhr or magreb
 	{
 		prayTime.nextPray++;
 	}
 
-	var str = '<li class="nextPray"><b>' + prayTime.timeNames[prayTime.nextPray] + '</b>';
-	str += '<span>'+ times[prayTime.nextPray] + '</span></li>';
-	
-	
+	obj.find('.mtoolbar-prayTimes li b').text( prayTime.timeNames[prayTime.nextPray] );
+	obj.find('.mtoolbar-prayTimes li span').text( times[prayTime.nextPray] );
+
+	var str = '';
+
 	for(var i = 0; i < times.length; i++)
 	{
 		if ( i == 1 || i == 4) //don't show Sunrise and Sunset
 			continue;
 
-		//if (  )
-		
 		str += '<li><b>' + prayTime.timeNames[i] + '</b>';
 		str += '<span>'+ times[i] + '</span></li>';
-	}//TODO: scroll to next pray
+	}
+
+	obj.find('.mtoolbar-prayTimes-sub').html( str );
 
 	return str;
 }
 function setDefaultCountry( obj, options )
 {
 	var country = options.countries[options.defaultCountry];
-	
+
 	obj.find('.mtoolbar-country').attr('class', '').addClass( 'mtoolbar-country mtbarDropdown flag_' + options.defaultCountry ).find('span').text( country.name );
 	obj.find('.mtoolbar-weather .capitalName').text( country.capital );
 
@@ -196,9 +197,9 @@ function setDefaultCountry( obj, options )
 
 	if ( options.usePray == true )
 	{
-		obj.find('.mtoolbar-prayTimes').html( myPray( options ) );
+		myPray( obj, options );
 	}
-	
+
 	if ( options.useWeather == true )
 	{
 		weather( obj, options );

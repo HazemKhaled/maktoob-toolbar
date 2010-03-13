@@ -63,8 +63,6 @@ width:125px;
 
 .clear{clear: both;}
 .mtoolbar-prayTimes{}
-.mtoolbar-prayTimes li{display:none}
-.mtoolbar-prayTimes li.nextPray{display:block}
 .mtoolbar-flags li{
 cursor: pointer;
 border-color:silver;
