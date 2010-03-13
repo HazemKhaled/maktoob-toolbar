@@ -98,7 +98,7 @@ ul.mtbarDropdown ul li a{ display: inline-block; }
 ul.mtbarDropdown ul ul{ left: 100%; top: 0; }
 ul.mtbarDropdown li:hover > ul{ visibility: visible; }
 
-.weatherNow{
+.weather-icon{
 background: no-repeat left;
 display:block;
 float:left;

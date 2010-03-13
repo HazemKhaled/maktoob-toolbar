@@ -83,6 +83,30 @@
 	};
 })(jQuery);
 
+
+var weekday = new Array(7);
+weekday[0] = "الأحد";
+weekday[1] = "الأثنين";
+weekday[2] = "الثلاثاء";
+weekday[3] = "الأربعاء";
+weekday[4] = "الخميس";
+weekday[5] = "الجمعة";
+weekday[6] = "السبت";
+
+var months = new Array(12);
+months[0] = 'يناير';
+months[1] = 'فبراير';
+months[2] = 'مارس';
+months[3] = 'أبريل';
+months[4] = 'مايو';
+months[5] = 'يونيو';
+months[6] = 'يوليو';
+months[7] = 'أغسطس';
+months[8] = 'سبتمبر';
+months[9] = 'أكتوبر';
+months[10] = 'نوفمبر';
+months[11] = 'ديسمبر';
+
 function myFlags( obj, options )
 {
 	var str = '';
@@ -100,29 +124,6 @@ function myFlags( obj, options )
 }
 function myDate( obj, country )
 {
-	var weekday = new Array(7);
-	weekday[0] = "الأحد";
-	weekday[1] = "الأثنين";
-	weekday[2] = "الثلاثاء";
-	weekday[3] = "الأربعاء";
-	weekday[4] = "الخميس";
-	weekday[5] = "الجمعة";
-	weekday[6] = "السبت";
-
-	var months = new Array(12);
-	months[0] = 'يناير';
-	months[1] = 'فبراير';
-	months[2] = 'مارس';
-	months[3] = 'أبريل';
-	months[4] = 'مايو';
-	months[5] = 'يونيو';
-	months[6] = 'يوليو';
-	months[7] = 'أغسطس';
-	months[8] = 'سبتمبر';
-	months[9] = 'أكتوبر';
-	months[10] = 'نوفمبر';
-	months[11] = 'ديسمبر';
-
 	var d = new Date();
 	localTime = d.getTime();
 	localOffset = d.getTimezoneOffset() * 60000;
@@ -136,7 +137,20 @@ function myDate( obj, country )
 function weather( obj, options )
 {
 	$.post( options.weatherServer, {code: options.countries[options.defaultCountry].code}, function ( data ) {
-		obj.find('.weatherNow').text( data.tmp + '°' ).attr('class', '').addClass('weatherNow weather' + data.icon);
+
+		obj.find('.weatherNow').text( data.tmp + '°' ).attr('class', '').addClass('weatherNow weather-icon weather' + data.icon);
+		
+		var d = new Date();
+
+		var str = '';
+		for ( var row in data.day )
+		{
+			str+= '<li><b>' + weekday[d.getDay()] + '</b>';
+			str+= '<span class="weather-icon weather' + data.day[row].morning.icon + '" title="' + data.day[row].morning.t + '">' + data.day[row].hi + '°</span>';
+			str+= '<span class="weather-icon weather' + data.day[row].evening.icon + '" title="' + data.day[row].evening.t + '">' + data.day[row].low + '°</span></li>';
+			d.setDate(d.getDate()+1);
+		}
+		obj.find('.mtoolbar-weather ul').html( str );
 	}, 'json' );
 }
 function myPray( obj, options )

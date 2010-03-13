@@ -24,10 +24,10 @@ if ( !empty( $_POST['code'] ) )
 		{
 			$tmp['hi']	= (int)$d->hi;
 			$tmp['low']	= (int)$d->low;
-			/*$tmp['morning']['icon']	= (int)$d->part[0]->icon;
+			$tmp['morning']['icon']	= (int)$d->part[0]->icon;
 			$tmp['morning']['t']	= (string)$d->part[0]->t;
 			$tmp['evening']['icon']	= (int)$d->part[1]->icon;
-			$tmp['evening']['t']	= (string)$d->part[1]->t;*/
+			$tmp['evening']['t']	= (string)$d->part[1]->t;
 			$data['day'][] = $tmp;
 		}
 		$data = json_encode( $data );
