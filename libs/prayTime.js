@@ -143,7 +143,13 @@ function PrayTime()
 	this.methodParams[this.Makkah]	= new Array(19, 1, 0, 1, 90);		
 	this.methodParams[this.Egypt]	= new Array(19.5, 1, 0, 0, 17.5);		
 	this.methodParams[this.Tehran]	= new Array(17.7, 0, 4.5, 0, 15);		
-	this.methodParams[this.Custom]	= new Array(18, 1, 0, 0, 17);		
+	this.methodParams[this.Custom]	= new Array(18, 1, 0, 0, 17);
+	
+	
+	/*
+	 * by Hazem Khaled <hazem.khaled@gmail.com>
+	 */
+	this.nextPray	= null;	// next pray
 
 }	
 
@@ -263,6 +269,15 @@ PrayTime.prototype.floatToTime12 = function(time, noSuffix)
 	var hours = Math.floor(time); 
 	var minutes = Math.floor((time- hours)* 60);
 	var suffix = hours >= 12 ? ' م' : ' ص';
+	
+	// to get the next pray
+	d = new Date();
+	d.setHours(d.getHours()-4);
+	if ( this.nextPray == null && d.getHours() < hours )
+	{
+		this.nextPray = true;
+	}
+	
 	hours = (hours+ 12 -1)% 12+ 1;
 	return hours+':'+ this.twoDigitsFormat(minutes)+ (noSuffix ? '' : suffix);
 }
@@ -396,12 +411,21 @@ PrayTime.prototype.adjustTimesFormat = function(times)
 	if (this.timeFormat == this.Float)
 		return times;
 	for (var i=0; i<7; i++)
+	{
+		if ( this.nextPray == true )
+			this.nextPray = i;
+		
 		if (this.timeFormat == this.Time12)
 			times[i] = this.floatToTime12(times[i]); 
 		else if (this.timeFormat == this.Time12NS)
 			times[i] = this.floatToTime12(times[i], true); 
 		else
 			times[i] = this.floatToTime24(times[i]);
+	}
+	if ( this.nextPray == null )
+		this.nextPray = 0;
+	if ( this.nextPray == true )
+		this.nextPray = 6;
 	return times;
 }
 
