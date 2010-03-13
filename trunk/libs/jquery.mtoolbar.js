@@ -160,12 +160,22 @@ function myPray( options )
 	var date = new Date();
 	var times = prayTime.getPrayerTimes(date, country.latitude, country.longitude, country.timeZone);
 
-	var str = '';
+	if ( prayTime.nextPray === 1 || prayTime.nextPray === 4)
+	{
+		prayTime.nextPray++;
+	}
+
+	var str = '<li class="nextPray"><b>' + prayTime.timeNames[prayTime.nextPray] + '</b>';
+	str += '<span>'+ times[prayTime.nextPray] + '</span></li>';
+	
 	
 	for(var i = 0; i < times.length; i++)
 	{
-		if ( i == 1 || i == 4)
+		if ( i == 1 || i == 4) //don't show Sunrise and Sunset
 			continue;
+
+		//if (  )
+		
 		str += '<li><b>' + prayTime.timeNames[i] + '</b>';
 		str += '<span>'+ times[i] + '</span></li>';
 	}//TODO: scroll to next pray
