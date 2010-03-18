@@ -1,87 +1,69 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" dir="rtl" lang="ar">
+<html dir="rtl" lang="ar" xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<title>Maktoob Toolbar</title>
-	<link type="text/css" rel="stylesheet" href="style.css" />
-	<script type="text/javascript" src="../libs/jquery.min.js"></script>
-	<script type="text/javascript" src="../libs/jquery.mtoolbar.js"></script>
-	<script type="text/javascript" src="../libs/prayTime.js"></script>
-	<script type="text/javascript">
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+<title>Maktoob Toolbar</title>
+<link href="style.css" rel="stylesheet" type="text/css" />
+<script src="../libs/jquery.min.js" type="text/javascript"></script>
+<script src="../libs/jquery.mtoolbar.js" type="text/javascript"></script>
+<script src="../libs/prayTime.js" type="text/javascript"></script>
+<script type="text/javascript">
 		$(document).ready( function () {
 			$('#toolbar1').mtoolbar();
 		} );
 	</script>
 </head>
+
 <body>
 
-	<div id="toolbar1" class="mtoolbar">
+<div id="toolbar1" class="mtoolbar">
 
-		<ul class="mtoolbar-links mtbarDropdown">
-			<li><a href="#/">الرئيسية</a></li>
-			<li><a href="#/albums/index.html">ألبومات</a></li>
-			<li>
-				<a href="#/albums/index.html">المنشدين</a>
-				<ul class="sub_menu">
-					<li>
-						<a href="#">مصريين</a>
-						<ul>
-							<li><a href="#">محمد عبد التواب</a></li>
-						</ul>
-					</li>
-					<li>
-						<a href="#">كويتيين</a>
-						<ul>
-							<li><a href="#">محمد الحسيان</a></li>
-							<li><a href="#">إبراهيم السعيد</a></li>
-							<li><a href="#">مشاري العرادة</a></li>
-							<li><a href="#">مشاري العفاسي</a></li>
-						</ul>
-					</li>
-					<li>
-						<a href="#">سعوديين</a>
-						<ul>
-							<li><a href="#">سمير البشيري</a></li>
-							<li><a href="#">أبو علي</a></li>
-							<li><a href="#">أبو ريان</a></li>
-							<li><a href="#">عبد القادر العوهلي</a></li>
-						</ul>
-					</li>
-					<li>
-						<a href="#">أجاني</a>
-						<ul>
-							<li><a href="#">Zain Bhikha</a></li>
-							<li><a href="#">يوسف أسلام</a></li>
-							<li><a href="#">Dawud Wharnsby</a></li>
-							<li><a href="#">سامي يوسف</a></li>
-						</ul>
-					</li>
-				</ul>
-			</li>
-			<li><a href="#">البحث</a></li>
-			<li><a href="#">أتصل بنا</a></li>
-		</ul>
 
-		<ul class="mtoolbar-country mtbarDropdown">
-			<li>
-				<span></span>
-				<ul class="mtoolbar-flags sub_menu"></ul>
-			</li>
+	<ul class="mtoolbar-links mtbarDropdown">
+		<li><a href="#/">الرئيسية</a></li>
+		<li><a href="#/albums/index.html">ألبومات</a></li>
+		<li><a href="#/albums/index.html">المنشدين</a>
+			<ul class="sub_menu">
+				<li><a href="#">مصريين</a></li>
+				<li><a href="#">كويتيين</a>
+					<ul>
+						<li><a href="#">محمد الحسيان</a></li>
+						<li><a href="#">إبراهيم السعيد</a></li>
+						<li><a href="#">مشاري العرادة</a></li>
+						<li><a href="#">مشاري العفاسي</a></li>
+					</ul>
+				</li>
+				<li><a href="#">سعوديين</a></li>
+				<li><a href="#">أجاني</a></li>
+			</ul>
+		</li>
+		<li><a href="#">البحث</a></li>
+		<li><a href="#">أتصل بنا</a></li>
+	</ul>
+	
+	
+	
+	<ul class="mtoolbar-country mtbarDropdown">
+		<li><span></span>
+		<ul class="mtoolbar-flags sub_menu"></ul>
+		</li>
+	</ul>
+	<ul class="mtoolbar-weather mtbarDropdown">
+		<li><span class="capitalName"></span><span class="weatherNow"></span>
+		<ul>
 		</ul>
-		<ul class="mtoolbar-weather mtbarDropdown">
-			<li>
-				<span class="capitalName"></span><span class="weatherNow"></span>
-				<ul></ul>
-			</li>
-		</ul>
-		<ul class="mtoolbar-prayTimes mtbarDropdown">
-			<li class="nextPray">
-				<b></b> <span></span>
-				<ul class="mtoolbar-prayTimes-sub"></ul>
-			</li>
-		</ul>
-		<div class="mtoolbar-time"></div>
+		</li>
+	</ul>
+	<ul class="mtoolbar-prayTimes mtbarDropdown">
+		<li class="nextPray"><b></b><span></span>
+			<ul class="mtoolbar-prayTimes-sub"></ul>
+		</li>
+	</ul>
+	<div class="mtoolbar-time">
 	</div>
+</div>
 
 </body>
+
 </html>
