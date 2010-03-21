@@ -65,6 +65,12 @@
 	    
 	    });
 
+
+		   $("ul.mtbarDropdown li ul li:has(ul)").addClass('has-a-child');
+
+
+
+
 			if ( options.useCountry == true )
 			{
 				obj.find('.mtoolbar-flags').html( myFlags( obj, options ) );
