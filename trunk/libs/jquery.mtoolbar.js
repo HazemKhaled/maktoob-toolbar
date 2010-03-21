@@ -1,4 +1,4 @@
-(function($){
+﻿(function($){
 	$.fn.mtoolbar = function(options) {
 
 	var defaults = {
@@ -132,7 +132,8 @@ function myDate( obj, country )
 
 	date = weekday[d.getDay()] + ' ' + d.getDate() + ' ' + months[d.getMonth()] + ' ' + d.getFullYear();
 	time = ( d.getHours() % 12 || 12 ) + ':' + (( d.getMinutes() < 10 ? '0' : '') + d.getMinutes() ) + ' ' + ( d.getHours() < 12 ? 'ص' : 'م' );
-	obj.find('.mtoolbar-time').text( date ).attr( 'title', time );
+	obj.find('.mtoolbar-time .mdate').text( date );
+	obj.find('.mtoolbar-time .mtime').text( time );
 }
 function weather( obj, options )
 {
