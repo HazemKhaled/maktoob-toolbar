@@ -1,28 +1,38 @@
 ﻿@CHARSET "UTF-8";
+body {
+	background:transparent url('images/test.jpg') repeat-y top center;
+	height:100%;
+}
 /* عام */
 .mtoolbar {
-	border: 1px solid #DFEBFF;
-	border-left: 0;
-	height: 30px;
-	line-height: 30px;
-	font-family: tahoma;
-	font-size: 11px;
-	top: 0;
+	height: 40px;
+	line-height: 40px;
+	font-family: Arial;
+	font-size: 12px;
+	font-weight:bold;
+	bottom: 0px;
 	text-align: center;
 	color: #6FA3FF;
-	position: absolute;
+	position: fixed;
 	left: 10px;
 	right: 10px;
-	background:white;
-	z-index:99999;
+	z-index:99999;	
+	background:white url('images/green-bg.jpg') repeat-x bottom center;
+	border:2px solid #6c8712;
+	border-bottom:0;
+	-moz-border-radius:8px 8px 0 0px;
+	-webkit-border-radius:8px 8px 0 0px;
+	border-radius:8px 8px 0 0;
+	padding:0 15px;
+	-moz-box-shadow:0px 0px 5px #6a6a6a;
+
 }
 .mtoolbar a {
-	color: #6FA3FF;
+	color:#425407;
 	text-decoration: none;
 }
 .mtoolbar a:hover {
-	color: #369;
-	text-decoration: underline;
+	color: white;
 }
 .mtoolbar ul, .mtoolbar li {
 	list-style: none;
@@ -46,17 +56,22 @@ ul.mtbarDropdown li a {
 	display: block;
 }
 ul.mtbarDropdown li {
-	background: white;
-	border-left: 1px solid #DFEBFF;
+	background-color:rgba(255,255,255,0.2);
+	-moz-border-radius:0px 0px 8px 8px;
+	-webkit-border-radius:0px 0px 8px 8px;
+	border-radius:0px 0px 8px 8px;	
+	margin-left:2px;
+	color:#425407;
 }
 ul.mtbarDropdown li:hover {
-	background: #EFF5FF;
+	background-color:rgba(66,84,7,0.8);
+}
+ul.mtbarDropdown li:hover a {
+	color:yellow;	
 }
 /* Doesn't work in IE */
 ul.mtbarDropdown li.hover, ul.mtbarDropdown li:hover {
 	position: relative;
-}
-ul.mtbarDropdown li.hover a {
 }
 /* 
 	LEVEL TWO
@@ -64,15 +79,21 @@ ul.mtbarDropdown li.hover a {
 ul.mtbarDropdown ul {
 	visibility: hidden;
 	position: absolute;
-	top: 100%;
+	bottom: 100%;
 	right: -1px;
-	border: 1px solid #DFEBFF;
-	border-left: 0;
+	border:0 !important;
 }
 ul.mtbarDropdown ul ul {
-	border-top: 1px solid #DFEBFF;
+	border-top:0;
 }
 ul.mtbarDropdown ul li {
+	background-color:rgba(66,84,7,1);
+	-moz-border-radius:0px;
+	-webkit-border-radius:0px;
+	border-radius:0px;	
+}
+ul.mtbarDropdown ul li:hover {
+
 }
 /* IE 6 & 7 Needs Inline Block */
 ul.mtbarDropdown ul li a {
@@ -82,8 +103,8 @@ ul.mtbarDropdown ul li a {
 	LEVEL THREE
 */
 ul.mtbarDropdown ul ul {
-	right: 90%;
-	top: 1px;
+	right: 100%;
+	bottom: 0px;
 }
 ul.mtbarDropdown li:hover > ul {
 	visibility: visible;
@@ -108,13 +129,23 @@ ul.mtoolbar-links li {
 }
 ul.mtoolbar-links ul {
 	margin-left: -75px;
+	-moz-border-radius:8px 8px 0 0 !important;	
+}
+ul.mtoolbar-links ul li:first-child {
+	-moz-border-radius:8px 8px 0 0 !important;		
 }
 ul.mtoolbar-links ul li {
-	border: 1px solid #DFEBFF;
-	border-top: 0;
+	border: 1px solid #6c8712;
+	border-bottom:0;
 	float: none;
-	width: 125px;
+	line-height:250%;	
+	width: 125px;	
 }
+.has-a-child {
+	background:transparent url('images/has-a-child.png') no-repeat 5% center;
+}
+
+
 /* مواقيت الصلاة */
 .nextPray {
 	border: 0 !important;
@@ -134,11 +165,20 @@ ul.mtoolbar-links ul li {
 }
 /* الوقت والتاريخ */
 .mtoolbar-time {
-	width: 143px;
+	width: 153px;
 	padding: 0 15px;
+	color:#425407;
+	background:white url('images/clock.png') no-repeat 97% 50% ;
+	height:28px;
+	line-height:28px;
+	margin-top:7px;
+	-moz-border-radius:8px;
+	padding-left:15px;
+	margin-left:5px;
 }
 .mdate {
 	float: right;
+	margin-right:18px;
 }
 /* الطقس */
 .capitalName {
