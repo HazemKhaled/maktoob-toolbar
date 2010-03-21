@@ -1,69 +1,100 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html dir="rtl" lang="ar" xmlns="http://www.w3.org/1999/xhtml">
-
 <head>
-<meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
-<title>Maktoob Toolbar</title>
-<link href="style.css" rel="stylesheet" type="text/css" />
-<script src="../libs/jquery.min.js" type="text/javascript"></script>
-<script src="../libs/jquery.mtoolbar.js" type="text/javascript"></script>
-<script src="../libs/prayTime.js" type="text/javascript"></script>
-<script type="text/javascript">
+	<meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+	<title>Maktoob Toolbar</title>
+	<link href="style.css" rel="stylesheet" type="text/css" />
+	<script src="../libs/jquery.min.js" type="text/javascript"></script>
+	<script src="../libs/jquery.mtoolbar.js" type="text/javascript"></script>
+	<script src="../libs/prayTime.js" type="text/javascript"></script>
+	<script type="text/javascript">
 		$(document).ready( function () {
 			$('#toolbar1').mtoolbar();
 		} );
-	</script>
+	</script>	
+
 </head>
-
 <body>
-
+<!-- الجسم -->
 <div id="toolbar1" class="mtoolbar">
 
-
+	<!-- قوائم الروابط -->
 	<ul class="mtoolbar-links mtbarDropdown">
-		<li><a href="#/">الرئيسية</a></li>
-		<li><a href="#/albums/index.html">ألبومات</a></li>
-		<li><a href="#/albums/index.html">المنشدين</a>
+		<li><a href="#">الرئيسية</a></li>
+		<li><a href="#">ألعاب</a></li>
+		<li><a href="#">صور</a>		
 			<ul class="sub_menu">
-				<li><a href="#">مصريين</a></li>
-				<li><a href="#">كويتيين</a>
+				<li><a href="#">صور حيوانات</a></li>
+				<li><a href="#">المرأة</a>
 					<ul>
-						<li><a href="#">محمد الحسيان</a></li>
-						<li><a href="#">إبراهيم السعيد</a></li>
-						<li><a href="#">مشاري العرادة</a></li>
-						<li><a href="#">مشاري العفاسي</a></li>
+						<li><a href="#">طبخات وأكلات</a></li>
+						<li><a href="#">أزياء وموظة</a></li>
+						<li><a href="#">لفات طرح</a></li>
+						<li><a href="#">أدوات مطبخ</a></li>
 					</ul>
 				</li>
-				<li><a href="#">سعوديين</a></li>
-				<li><a href="#">أجاني</a></li>
+				<li><a href="#">أطفال</a></li>
+			</ul>		
+		</li>
+		<li><a href="#">المزيد</a>
+			<ul class="sub_menu">
+				<li><a href="#">عنا</a></li>
+				<li><a href="#">أتصل بنا</a>
+					<ul>
+						<li><a href="#">أبلغ عن مشكلة</a></li>
+						<li><a href="#">أعلن معنا</a></li>
+						<li><a href="#">أنضم للفريق</a></li>
+					</ul>
+				</li>
+				<li><a href="#">المركز الأعلامي</a></li>
 			</ul>
 		</li>
-		<li><a href="#">البحث</a></li>
-		<li><a href="#">أتصل بنا</a></li>
-	</ul>
+	</ul>	<!-- قوائم الروابط -->
 	
 	
 	
+	
+	
+	<!-- قائمة الدول -->
 	<ul class="mtoolbar-country mtbarDropdown">
-		<li><span></span>
-		<ul class="mtoolbar-flags sub_menu"></ul>
+		<li>
+			<span></span>
+			<ul class="mtoolbar-flags sub_menu"></ul>
 		</li>
-	</ul>
+	</ul><!-- قائمة الدول -->
+
+	
+	
+	<!-- الطقس -->
 	<ul class="mtoolbar-weather mtbarDropdown">
-		<li><span class="capitalName"></span><span class="weatherNow"></span>
-		<ul>
-		</ul>
+
+		<li class="weather-live">
+			<span class="capitalName"></span>
+			<span class="weatherNow"></span>
+			<ul></ul>
 		</li>
-	</ul>
+		
+	</ul>	<!-- الطقس -->
+
+
+	<!-- مواقيت الصلاة -->	
 	<ul class="mtoolbar-prayTimes mtbarDropdown">
-		<li class="nextPray"><b></b><span></span>
+		<li class="nextPray">
+			<b></b>
+			<span></span>
 			<ul class="mtoolbar-prayTimes-sub"></ul>
 		</li>
-	</ul>
+	</ul>	<!-- مواقيت الصلاة -->	
+
+	
+	<!-- منطقة الوقت  -->
 	<div class="mtoolbar-time">
-	</div>
-</div>
+		<div class="mdate"></div>
+		<div class="mtime"></div>
+	</div>	<!-- منطقة الوقت  -->
+
+
+</div>  <!-- الجسم -->
 
 </body>
-
 </html>

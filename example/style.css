@@ -1,15 +1,18 @@
 ﻿@CHARSET "UTF-8";
+/* عام */
 .mtoolbar {
-	border:1px solid #DFEBFF;
-	border-left:0;
-	height:30px;
+	border: 1px solid #DFEBFF;
+	border-left: 0;
+	height: 30px;
 	line-height: 30px;
 	font-family: tahoma;
 	font-size: 11px;
-	margin: 0 auto;
-	width: 95%;
+	top: 0;
 	text-align: center;
-	color:#6FA3FF;
+	color: #6FA3FF;
+	position: absolute;
+	left: 10px;
+	right: 10px;
 }
 .mtoolbar a {
 	color: #6FA3FF;
@@ -18,11 +21,6 @@
 .mtoolbar a:hover {
 	color: #369;
 	text-decoration: underline;
-}
-.mtoolbar-rightCorner, .mtoolbar-leftCorner {
-	background-repeat: no-repeat;
-	height: 30px;
-	width: 5px;
 }
 .mtoolbar ul, .mtoolbar li {
 	list-style: none;
@@ -33,68 +31,25 @@ ul.mtoolbar-links, .mtoolbar-time, .mtoolbar-prayTimes, .mtoolbar-weather, .mtoo
 	display: block;
 	float: left;
 }
-
-.mtoolbar-country li {
-	width:50px;
-	padding:0 10px;
-	border-left:0;
-	cursor:pointer;
-}
-.mtoolbar-country ul li{
-	border:1px solid #DFEBFF;	
-	border-width:0 1px 1px;
-}
-
-ul.mtoolbar-links {
-	display: block;
-	float: right;
-}
-ul.mtoolbar-links li {
-	float: right;
-	padding: 0 10px;
-}
-ul.mtoolbar-links li a {
-}
-ul.mtoolbar-links ul {
-	margin-left: -75px;
-}
-ul.mtoolbar-links ul li {
-	border:1px solid #DFEBFF;
-	border-top:0;
-	float: none;
-	width: 125px;
-}
-.clear {
-	clear: both;
-}
-.mtoolbar-prayTimes {
-}
-
-
-.mtoolbar-flags li {
-	width:
-}
 /* 
 	LEVEL ONE
 */
+.mtbarDropdown {
+	cursor: pointer;
+}
 ul.mtbarDropdown {
 	position: relative;
 }
 ul.mtbarDropdown li a {
 	display: block;
-	width: 100%;
 }
-
-
 ul.mtbarDropdown li {
-	background:white;
-	border-left: 1px solid #DFEBFF;	
+	background: white;
+	border-left: 1px solid #DFEBFF;
 }
 ul.mtbarDropdown li:hover {
-	background:#EFF5FF;
+	background: #EFF5FF;
 }
-
-
 /* Doesn't work in IE */
 ul.mtbarDropdown li.hover, ul.mtbarDropdown li:hover {
 	position: relative;
@@ -108,12 +63,12 @@ ul.mtbarDropdown ul {
 	visibility: hidden;
 	position: absolute;
 	top: 100%;
-	right:-1px;
-	border:1px solid #DFEBFF;	
-	border-left:0;
+	right: -1px;
+	border: 1px solid #DFEBFF;
+	border-left: 0;
 }
 ul.mtbarDropdown ul ul {
-	border-top:1px solid #DFEBFF;
+	border-top: 1px solid #DFEBFF;
 }
 ul.mtbarDropdown ul li {
 }
@@ -131,48 +86,100 @@ ul.mtbarDropdown ul ul {
 ul.mtbarDropdown li:hover > ul {
 	visibility: visible;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-.mtoolbar-weather {
-	width:100px;
-	padding:0 10px;
+/* منطقة الدول */
+.mtoolbar-country li {
+	width: 50px;
+	padding: 0 10px;
+	border-left: 0;
 }
-.mtoolbar-weather ul {
-	width:200px;
-	margin-right:-50px;
+.mtoolbar-country ul li {
+	border-right: 0;
 }
-
-.mtoolbar-weather ul li {
-	overflow:hidden;
+/* منطقة قائمة الروابط */
+ul.mtoolbar-links {
+	float: right;
+	width: 250px;
+}
+ul.mtoolbar-links li {
+	float: right;
 	padding: 0 10px;
 }
-
-.mtoolbar-weather ul li b{
-	float:right;
-	width:70px;
-	display:block;
+ul.mtoolbar-links ul {
+	margin-left: -75px;
 }
-
+ul.mtoolbar-links ul li {
+	border: 1px solid #DFEBFF;
+	border-top: 0;
+	float: none;
+	width: 125px;
+}
+/* مواقيت الصلاة */
+.nextPray {
+	border: 0 !important;
+}
+.mtoolbar-prayTimes li {
+	width: 150px;
+}
+.mtoolbar-prayTimes li ul li:hover {
+	background: transparent !important;
+	cursor: default !important;
+}
+.mtoolbar-prayTimes b {
+	padding-right: 10px;
+}
+.mtoolbar-prayTimes span {
+	margin-right: 10px;
+}
+/* الوقت والتاريخ */
+.mtoolbar-time {
+	width: 143px;
+	padding: 0 15px;
+}
+.mdate {
+	float: right;
+}
+/* الطقس */
+.capitalName {
+	float: right;
+}
+.weatherNow {
+	float: left !important;
+}
+.weather-live {
+	border: 0 !important;
+	height: 30px;
+	padding-right: 8px !important;
+}
+.mtoolbar-weather {
+	width: 109px;
+	padding: 0 10px;
+}
+.mtoolbar-weather ul {
+	width: 210px;
+	margin-right: -50px;
+}
+.mtoolbar-weather ul li {
+	overflow: hidden;
+	padding: 0 10px;
+}
+.mtoolbar-weather ul li:hover {
+	background: transparent !important;
+	cursor: default !important;
+}
+.mtoolbar-weather ul li b {
+	float: right;
+	width: 70px;
+	display: block;
+}
 .weather-icon {
 	background: no-repeat left;
 	display: block;
 	float: right;
 	line-height: 30px;
-	padding-left: 30px;
-	margin:0px 5px;
-	width:13px;
+	padding-left: 35px;
+	margin: 0px 5px;
+	width: 13px;
 }
-
 .weather01 {
 	background-image: url(images/icons/01.png);
 }
@@ -304,7 +311,7 @@ ul.mtbarDropdown li:hover > ul {
 }
 .weather44 {
 	/* background-image: url(images/icons/44.png); */
-	background:none;
+	background: none;
 }
 .weather45 {
 	background-image: url(images/icons/45.png);
