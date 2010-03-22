@@ -92,9 +92,6 @@ ul.mtbarDropdown ul li {
 	-webkit-border-radius:0px;
 	border-radius:0px;	
 }
-ul.mtbarDropdown ul li:hover {
-
-}
 /* IE 6 & 7 Needs Inline Block */
 ul.mtbarDropdown ul li a {
 	display: inline-block;
@@ -111,13 +108,75 @@ ul.mtbarDropdown li:hover > ul {
 }
 /* منطقة الدول */
 .mtoolbar-country li {
-	width: 50px;
-	padding: 0 10px;
-	border-left: 0;
+	width: auto;
+	height:28px;
+	line-height:28px;
+	margin-top:7px !important;
+	margin-right:8px !important;
+	-moz-border-radius:8px !important;	
+	background:white url('images/country-bg.jpg') repeat-x top center !important;
+	text-align:center;
+	padding:0 10px;
+}
+.mtoolbar-country ul {
+	width:271px;
+	height:233px;
+	right:-250px !important;
+	bottom:24px !important;
+	background:transparent url('images/countries-bg.png') no-repeat top center;
+	padding:25px 25px;
+	
 }
 .mtoolbar-country ul li {
-	border-right: 0;
+	width: 80px !important;	
+	height:auto !important;
+	line-height:normal !important;
+	margin:7px 5px !important;
+	-moz-border-radius:0 !important;	
+	background:transparent !important;
+	text-align:center;
+	padding:0;
+	float:right;
+	border-bottom:1px dotted silver;
 }
+.mtoolbar-country ul li:hover {
+	border-bottom:1px solid transparent;
+	color:maroon;
+}
+.mtoolbar-country div{
+	background-repeat:no-repeat;
+	background-position:right center;	
+	width:auto;
+	margin:0 auto;
+	text-align:right;
+	padding-right:20px;
+	font-size:14px;
+}
+
+
+.flag_ae{background-image:url('images/flags/ae.gif');}
+.flag_bh{background-image:url('images/flags/bh.gif');}
+.flag_dj{background-image:url('images/flags/dj.gif');}
+.flag_dz{background-image:url('images/flags/dz.gif');}
+.flag_eg{background-image:url('images/flags/eg.gif');}
+.flag_iq{background-image:url('images/flags/iq.gif');}
+.flag_jo{background-image:url('images/flags/jo.gif');}
+.flag_km{background-image:url('images/flags/km.gif');}
+.flag_kw{background-image:url('images/flags/kw.gif');}
+.flag_lb{background-image:url('images/flags/lb.gif');}
+.flag_ly{background-image:url('images/flags/ly.gif');}
+.flag_ma{background-image:url('images/flags/ma.gif');}
+.flag_mr{background-image:url('images/flags/mr.gif');}
+.flag_om{background-image:url('images/flags/om.gif');}
+.flag_ps{background-image:url('images/flags/ps.gif');}
+.flag_qa{background-image:url('images/flags/qa.gif');}
+.flag_sa{background-image:url('images/flags/sa.gif');}
+.flag_sd{background-image:url('images/flags/sd.gif');}
+.flag_so{background-image:url('images/flags/so.gif');}
+.flag_sy{background-image:url('images/flags/sy.gif');}
+.flag_tn{background-image:url('images/flags/tn.gif');}
+.flag_ye{background-image:url('images/flags/ye.gif');}
+
 /* منطقة قائمة الروابط */
 ul.mtoolbar-links {
 	float: right;
@@ -151,17 +210,59 @@ ul.mtoolbar-links ul li {
 	border: 0 !important;
 }
 .mtoolbar-prayTimes li {
-	width: 150px;
+	width: 110px;
+	height:28px;
+	line-height:28px;
+	margin-top:7px;
+	-moz-border-radius:8px !important;		
+}
+.mtoolbar-prayTimes li:hover {
+	color:white !important;
+}
+.mtoolbar-prayTimes li ul li {
+	background:transparent;
+	border:0 !important;
+	width:90% !important;
+	margin-left:0px !important;
+	margin-right:8px;
 }
 .mtoolbar-prayTimes li ul li:hover {
-	background: white !important;
-	cursor: default !important;
+	color:#425407 !important;
 }
 .mtoolbar-prayTimes b {
-	padding-right: 10px;
+	padding-right: 0px;
 }
 .mtoolbar-prayTimes span {
-	margin-right: 10px;
+	margin-right: 5px;
+}
+
+.mtoolbar-prayTimes-sub {
+	width:143px;
+	height:197px;
+	background:transparent url('images/pray-bg.png') no-repeat top center;
+	right:-15px !important;
+	bottom:25px !important; 
+	font-size:10px;
+	font-family:Tahoma;
+	font-weight:normal !important;
+}
+.pray1, .pray4 {
+	display:none;
+}
+.pray0 {
+	background:transparent url('images/icons/21.png') no-repeat top right !important;	
+}
+.pray2 {
+	background:transparent url('images/icons/36.png') no-repeat top right !important;
+}
+.pray3 {
+	background:transparent url('images/icons/34.png') no-repeat top right !important;	
+}
+.pray5 {
+	background:transparent url('images/icons/22.png') no-repeat top right !important;	
+}
+.pray6 {
+	background:transparent url('images/icons/33.png') no-repeat top right !important;	
 }
 /* الوقت والتاريخ */
 .mtoolbar-time {
@@ -177,24 +278,57 @@ ul.mtoolbar-links ul li {
 	margin-left:5px;
 }
 .mdate {
-	float: right;
-	margin-right:18px;
+	float:left;
+	font-size:10px;
+	font-family:tahoma;
+	font-weight:normal;
+}
+.mtime {
+	margin-right:15px;
+	font-size:15px;
 }
 /* الطقس */
 .capitalName {
 	float: right;
+	margin-left:5px;
 }
 .weatherNow {
-	float: left !important;
+	float: right;
+	color:#5E7211 !important;
+	font-size:25px;
+	font-weight:bold;
+	font-family:"Times New Roman", Times, serif;
+	margin-bottom:3px;
 }
 .weather-live {
-	border: 0 !important;
-	height: 30px;
-	padding-right: 8px !important;
+	padding-right: 8px !important;	
+	width: 100px;
+	height:28px;
+	line-height:28px;
+	margin-top:7px !important;
+	margin-right:3px !important;
+	-moz-border-radius:8px !important;
+}
+
+.weather-live:hover, .weather-live:hover .weatherNow  {
+	color:white !important;
+}
+
+.weather-live ul {
+	width:200px;
+	height:182px;
+	background:transparent url('images/weather-bg.png') no-repeat top center;
+	bottom:25px !important;	
+	padding:15px 0 0 0;
+}
+.weather-live ul li {
+	background:transparent !important;
+	color:#425407 !important;
 }
 .mtoolbar-weather {
 	width: 109px;
 	padding: 0 10px;
+	margin-left:5px;
 }
 .mtoolbar-weather ul {
 	width: 210px;
@@ -202,25 +336,27 @@ ul.mtoolbar-links ul li {
 }
 .mtoolbar-weather ul li {
 	overflow: hidden;
-	padding: 0 10px;
-}
-.mtoolbar-weather ul li:hover {
-	background: white !important;
-	cursor: default !important;
+	padding: 0 5px;
 }
 .mtoolbar-weather ul li b {
 	float: right;
 	width: 70px;
 	display: block;
+	color:#ff9600;
+	font-size:14px;
 }
+
 .weather-icon {
 	background: no-repeat left;
 	display: block;
 	float: right;
 	line-height: 30px;
-	padding-left: 35px;
+	padding-left: 38px;
 	margin: 0px 5px;
 	width: 13px;
+	color:#00c6ff;
+	height:30px;
+	line-height:26px;
 }
 .weather01 {
 	background-image: url(images/icons/01.png);
