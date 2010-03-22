@@ -15,7 +15,7 @@
 									'eg': {name: 'مصر',			capital: 'القاهرة',	longitude: 31.39, latitude: 30.12, timeZone: 2, code: 'EGXX0004', prayMethod: 5},
 									'iq': {name: 'العراق',		capital: 'بغداد',	longitude: 44.43, latitude: 33.33, timeZone: 3, code: 'IZXX0008'},
 									'jo': {name: 'الأردن',		capital: 'عمان',	longitude: 35.93, latitude: 31.94, timeZone: 2, code: 'JOXX0002'},
-									'km': {name: 'جزر القمر',	capital: 'موروني',	longitude: 43.20, latitude:-11.75, timeZone: 3, code: 'CNXX0003'},
+									//'km': {name: 'جزر القمر',	capital: 'موروني',	longitude: 43.20, latitude:-11.75, timeZone: 3, code: 'CNXX0003'},
 									'kw': {name: 'الكويت',		capital: 'الكويت',	longitude: 47.97, latitude: 29.36, timeZone: 3, code: 'KUXX0003'},
 									'lb': {name: 'لبنان',		capital: 'بيروت',	longitude: 35.53, latitude: 52.39, timeZone: 2, code: 'LEXX0003'},
 									'ly': {name: 'ليبيا',		capital: 'طرابلس',	longitude: 13.18, latitude: 32.90, timeZone: 2, code: 'LYXX0009'},
@@ -64,9 +64,7 @@
 	        $('ul:first',this).css('visibility', 'hidden');
 	    
 	    });
-
-
-		   $("ul.mtbarDropdown li ul li:has(ul)").addClass('has-a-child');
+	    $("ul.mtbarDropdown li ul li:has(ul)").addClass('has-a-child');
 
 
 
@@ -123,7 +121,7 @@ function myFlags( obj, options )
 		{
 			setDefaultCountry( obj, options );
 		}
-		str+= '<li class="flag_' + i + '" rel="' + i + '">' + options.countries[i].name + '</li>';
+		str+= '<li rel="' + i + '"><div class="flag_' + i + '">' + options.countries[i].name + '</div></li>';
 	}
 
 	return str;
@@ -193,10 +191,10 @@ function myPray( obj, options )
 
 	for(var i = 0; i < times.length; i++)
 	{
-		if ( i == 1 || i == 4) //don't show Sunrise and Sunset
-			continue;
+		//if ( i == 1 || i == 4) //don't show Sunrise and Sunset
+			//continue;
 
-		str += '<li><b>' + prayTime.timeNames[i] + '</b>';
+		str += '<li class="pray' + i + '"><b>' + prayTime.timeNames[i] + '</b>';
 		str += '<span>'+ times[i] + '</span></li>';
 	}
 
@@ -208,7 +206,7 @@ function setDefaultCountry( obj, options )
 {
 	var country = options.countries[options.defaultCountry];
 
-	obj.find('.mtoolbar-country').attr('class', '').addClass( 'mtoolbar-country mtbarDropdown flag_' + options.defaultCountry ).find('span').text( country.name );
+	obj.find('.mtoolbar-country li .current').attr('class', '').addClass( 'current flag_' + options.defaultCountry ).text( country.name );
 	obj.find('.mtoolbar-weather .capitalName').text( country.capital );
 
 	if ( options.useTime == true )
