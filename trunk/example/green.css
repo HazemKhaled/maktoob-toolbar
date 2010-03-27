@@ -2,7 +2,7 @@
 
 body {
 	background: transparent url('images/test.jpg') repeat-y top center;
-	height: 100%;
+	direction: rtl;
 }
 
 /* عام */
@@ -47,7 +47,7 @@ body {
 	padding: 0;
 }
 
-ul.mtoolbar-links,.mtoolbar-time,.mtoolbar-prayTimes,.mtoolbar-weather,.mtoolbar-country
+.mtoolbar-time,.mtoolbar-prayTimes,.mtoolbar-weather,.mtoolbar-country
 	{
 	display: block;
 	float: left;
@@ -69,11 +69,13 @@ ul.mtbarDropdown li a {
 }
 
 ul.mtbarDropdown li {
+	background-color: rgb(255, 255, 255);
 	background-color: rgba(255, 255, 255, 0.2);
 	color: #425407;
 }
 
 ul.mtbarDropdown li:hover {
+	background-color: rgb(66, 84, 7);
 	background-color: rgba(66, 84, 7, 0.8);
 }
 
@@ -97,6 +99,7 @@ ul.mtbarDropdown ul ul {
 }
 
 ul.mtbarDropdown ul li {
+	background-color: rgb(66, 84, 7);
 	background-color: rgba(66, 84, 7, 1);
 }
 
@@ -123,8 +126,7 @@ ul.mtoolbar-links {
 
 ul.mtoolbar-links li {
 	-moz-border-radius: 0px 0px 8px 8px;
-	-webkit-border-radius: 0px 0px 8px 8px; border-radius : 0px 0px 8px 8px
-	;
+	-webkit-border-radius: 0px 0px 8px 8px; border-radius : 0px 0px 8px 8px;
 	float: right;
 	padding: 0 10px;
 	margin-left: 2px;
@@ -425,6 +427,7 @@ ul.mtoolbar-links ul li.has-a-child {
 	color: #00c6ff;
 	height: 30px;
 	line-height: 26px;
+	white-space:nowrap;
 }
 
 .mtoolbar-weather .capitalName {
