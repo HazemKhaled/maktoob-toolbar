@@ -50,6 +50,12 @@
 	var options = $.extend(defaults, options);
 
 	return this.each(function() {
+		
+		if ( $.browser.msie === true && $.browser.version < 7 )
+		{
+			$(this).hide();
+			return ;
+		}
 		obj = $(this);
 
 		// drobdown menus
