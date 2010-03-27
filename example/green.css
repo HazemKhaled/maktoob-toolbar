@@ -1,10 +1,5 @@
 ﻿@CHARSET "UTF-8";
 
-body {
-	background: transparent url('images/test.jpg') repeat-y top center;
-	direction: rtl;
-}
-
 /* عام */
 .mtoolbar {
 	-moz-box-shadow: 0 0 5px #6A6A6A;
@@ -126,7 +121,8 @@ ul.mtoolbar-links {
 
 ul.mtoolbar-links li {
 	-moz-border-radius: 0px 0px 8px 8px;
-	-webkit-border-radius: 0px 0px 8px 8px; border-radius : 0px 0px 8px 8px;
+	-webkit-border-radius: 0px 0px 8px 8px;
+	border-radius : 0px 0px 8px 8px;
 	float: right;
 	padding: 0 10px;
 	margin-left: 2px;
