@@ -368,27 +368,27 @@ ul.mtoolbar-links ul li.has-a-child {
 	margin-right: 5px;
 }
 
-.mtoolbar-prayTimes .pray1,.mtoolbar-prayTimes .pray4 {
+.mtoolbar-prayTimes .pray-sunrise,.mtoolbar-prayTimes .pray-midnight {
 	display: none;
 }
 
-.mtoolbar-prayTimes .pray0 {
+.mtoolbar-prayTimes .pray-fajr {
 	
 }
 
-.mtoolbar-prayTimes .pray2 {
+.mtoolbar-prayTimes .pray-dhuhr {
 	background-image: url('images/icons/36.png');
 }
 
-.mtoolbar-prayTimes .pray3 {
+.mtoolbar-prayTimes .pray-asr {
 	background-image: url('images/icons/34.png');
 }
 
-.mtoolbar-prayTimes .pray5 {
+.mtoolbar-prayTimes .pray-maghrib {
 	background-image: url('images/icons/22.png');
 }
 
-.mtoolbar-prayTimes .pray6 {
+.mtoolbar-prayTimes .pray-isha {
 	background-image: url('images/icons/33.png');
 }
 
@@ -458,7 +458,7 @@ ul.mtoolbar-links ul li.has-a-child {
 
 .weather-live ul {
 	width: 200px;
-	height: 182px;
+	height: 92px;
 	background: transparent url('images/weather-bg.png') no-repeat top center;
 	bottom: 25px !important;
 	padding: 15px 0 0 0;
