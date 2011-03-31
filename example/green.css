@@ -458,7 +458,7 @@ ul.mtoolbar-links ul li.has-a-child {
 
 .weather-live ul {
 	width: 200px;
-	height: 182px;
+	height: 92px;
 	background: transparent url('images/weather-bg.png') no-repeat top center;
 	bottom: 25px !important;
 	padding: 15px 0 0 0;
