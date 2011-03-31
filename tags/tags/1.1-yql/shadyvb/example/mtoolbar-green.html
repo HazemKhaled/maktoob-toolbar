@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="rtl" lang="ar" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+	<title>Maktoob Toolbar</title>
+	<link href="green.css" rel="stylesheet" type="text/css" />
+	<script src="../libs/jquery.min.js" type="text/javascript"></script>
+	<script src="../libs/jquery.mtoolbar.js" type="text/javascript"></script>
+	<script src="../libs/prayTime.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		$(document).ready( function () {
+			$('#toolbar1').mtoolbar();
+		} );
+	</script>	
+
+</head>
+<body>
+<!-- الجسم -->
+<div id="toolbar1" class="mtoolbar">
+
+	<!-- قوائم الروابط -->
+	<ul class="mtoolbar-links mtbarDropdown">
+		<li><a href="#">الرئيسية</a></li>
+		<li><a href="#">ألعاب</a></li>
+		<li><a href="#">صور</a>		
+			<ul class="sub_menu">
+				<li><a href="#">صور حيوانات</a></li>
+				<li><a href="#">المرأة</a>
+					<ul>
+						<li><a href="#">طبخات وأكلات</a></li>
+						<li><a href="#">أزياء وموظة</a></li>
+						<li><a href="#">لفات طرح</a></li>
+						<li><a href="#">أدوات مطبخ</a></li>
+					</ul>
+				</li>
+				<li><a href="#">أطفال</a></li>
+			</ul>		
+		</li>
+		<li><a href="#">المزيد</a>
+			<ul class="sub_menu">
+				<li><a href="#">عنا</a></li>
+				<li><a href="#">أتصل بنا</a>
+					<ul>
+						<li><a href="#">أبلغ عن مشكلة</a></li>
+						<li><a href="#">أعلن معنا</a></li>
+						<li><a href="#">أنضم للفريق</a></li>
+					</ul>
+				</li>
+				<li><a href="#">المركز الأعلامي</a></li>
+			</ul>
+		</li>
+	</ul>
+	<!-- قوائم الروابط -->
+
+	<!-- قائمة الدول -->
+	<ul class="mtoolbar-country mtbarDropdown">
+		<li>
+			<div class="current"></div>
+			<ul class="mtoolbar-flags sub_menu"></ul>
+		</li>
+	</ul>
+	<!-- قائمة الدول -->
+
+	<!-- الطقس -->
+	<ul class="mtoolbar-weather mtbarDropdown">
+		<li class="weather-live">
+			<span class="capitalName"></span>
+			<span class="weatherNow"></span>
+			<ul></ul>
+		</li>
+	</ul>
+	<!-- الطقس -->
+
+	<!-- مواقيت الصلاة -->	
+	<ul class="mtoolbar-prayTimes mtbarDropdown">
+		<li class="nextPray">
+			<b></b>
+			<span></span>
+			<ul class="mtoolbar-prayTimes-sub">
+			</ul>
+		</li>
+	</ul>
+	<!-- مواقيت الصلاة -->	
+
+	
+	<!-- منطقة الوقت  -->
+	<div class="mtoolbar-time">
+		<div class="mdate"></div>
+		<div class="mtime"></div>
+	</div>
+	<!-- منطقة الوقت  -->
+
+
+</div>
+
+</body>
+</html>
