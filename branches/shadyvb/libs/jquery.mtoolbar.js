@@ -67,41 +67,42 @@ function myPray( obj, options )
 	var country = options.countries[options.defaultCountry];
 
 	//define the configration
-	prayTime.setCalcMethod(  isNaN(country.prayMethod) ? options.prayMethod : country.prayMethod );
-	prayTime.setTimeFormat( prayTime.Time12 );
-	prayTime.timeNames[0] = 'صلاة الفجر';
-	prayTime.timeNames[1] = 'شروق الشمس';
-	prayTime.timeNames[2] = 'صلاة الظهر';
-	prayTime.timeNames[3] = 'صلاة العصر';
-	prayTime.timeNames[4] = 'غروب الشمس';
-	prayTime.timeNames[5] = 'صلاة المغرب';
-	prayTime.timeNames[6] = 'صلاة العشاء';
+	prayTimes.setMethod( isNaN(country.prayMethod) ? options.prayMethod : country.prayMethod ); 
+	
+	//prayTimes.setTimeFormat('12h');
+
+	timeNames = ['صلاة الفجر',
+	             'شروق الشمس',
+	             'صلاة الظهر',
+	             'صلاة العصر',
+	             'صلاة المغرب',
+	             'صلاة العشاء',
+	             'منتصف اليل'
+	             ];
 
 
 	var date = new Date();
-	var times = prayTime.getPrayerTimes(date, country.latitude, country.longitude, country.timeZone);
+	var times = prayTimes.getTimes(date, [country.latitude, country.longitude], country.timeZone, 'auto', '12h');
 
-	if ( prayTime.nextPray === 1 || prayTime.nextPray === 4)//if Sunrise or Sunset display zuhr or magreb
-	{
-		prayTime.nextPray++;
-	}
-
-	obj.find('.mtoolbar-prayTimes li b').text( prayTime.timeNames[prayTime.nextPray] );
-	obj.find('.mtoolbar-prayTimes li span').text( times[prayTime.nextPray] );
 
 	var str = '';
 
-	for(var i = 0; i < times.length; i++)
+	var timeNames = {fajr: 'صلاة الفجر', sunrise: 'شروق الشمس', dhuhr: 'صلاة الظهر', asr:  'صلاة العصر', maghrib: 'صلاة المغرب', isha: 'صلاة العشاء', midnight: 'منتصف اليل'};
+	for(var i in timeNames)
 	{
-		//if ( i == 1 || i == 4) //don't show Sunrise and Sunset
+		//if ( i == 'sunrise' || i == 'midnight') //don't show Sunrise and Sunset
 			//continue;
 
-		str += '<li class="pray' + i + '"><b>' + prayTime.timeNames[i] + '</b>';
-		str += '<span>'+ times[i] + '</span></li>';
+		str += '<li class="pray-' + i + '"><b>' + timeNames[i] + '</b>';
+		str += '<span>' + times[i] + '</span></li>';
 	}
 
 	obj.find('.mtoolbar-prayTimes-sub').html( str );
 
+
+	obj.find('.mtoolbar-prayTimes li b:eq(0)').text( timeNames[ prayTimes.nextPray ] );
+	obj.find('.mtoolbar-prayTimes li span:eq(0)').text( times[prayTimes.nextPray] );
+	
 	return str;
 }
 
@@ -138,11 +139,11 @@ function setDefaultCountry( obj, options )
 					useWeather	: true,
 					useCountry	: true,
 					countries	: {
-						'ae': {name: 'الأمارات',		capital: 'أبو ظبي',	longitude: 54.36, latitude: 24.46, timeZone: 4, code: 'AEXX0001'},
+						'ae': {name: 'الأمارات',		capital: 'أبو ظبي',longitude: 54.36, latitude: 24.46, timeZone: 4, code: 'AEXX0001'},
 						'bh': {name: 'البحرين',		capital: 'المنامة',	longitude: 50.58, latitude: 26.21, timeZone: 3, code: 'BAXX0001'},
 						'dj': {name: 'جيبوتي',		capital: 'جيبوتي',	longitude: 43.16, latitude: 11.60, timeZone: 3, code: 'DJXX0001'},
 						'dz': {name: 'الجزائر',		capital: 'الجزائر',	longitude:  5.05, latitude: 36.28, timeZone: 1, code: 'AGXX0001'},
-						'eg': {name: 'مصر',			capital: 'القاهرة',	longitude: 31.39, latitude: 30.12, timeZone: 2, code: 'EGXX0004', prayMethod: 5},
+						'eg': {name: 'مصر',		capital: 'القاهرة',	longitude: 31.39, latitude: 30.12, timeZone: 2, code: 'EGXX0004', prayMethod: 5},
 						'iq': {name: 'العراق',		capital: 'بغداد',	longitude: 44.43, latitude: 33.33, timeZone: 3, code: 'IZXX0008'},
 						'jo': {name: 'الأردن',		capital: 'عمان',	longitude: 35.93, latitude: 31.94, timeZone: 2, code: 'JOXX0002'},
 						//'km': {name: 'جزر القمر',	capital: 'موروني',	longitude: 43.20, latitude:-11.75, timeZone: 3, code: 'CNXX0003'},
@@ -150,10 +151,10 @@ function setDefaultCountry( obj, options )
 						'lb': {name: 'لبنان',		capital: 'بيروت',	longitude: 35.53, latitude: 52.39, timeZone: 2, code: 'LEXX0003'},
 						'ly': {name: 'ليبيا',		capital: 'طرابلس',	longitude: 13.18, latitude: 32.90, timeZone: 2, code: 'LYXX0009'},
 						'ma': {name: 'المغرب',		capital: 'الرباط',	longitude: -6.83, latitude: 34.03, timeZone: 0, code: 'MOXX0007'},
-						'mr': {name: 'موريتانيا',	capital: 'نواكشوط',	longitude:-15.95, latitude: 18.10, timeZone: 0, code: 'MRXX0004'},
+						'mr': {name: 'موريتانيا',		capital: 'نواكشوط',longitude:-15.95, latitude: 18.10, timeZone: 0, code: 'MRXX0004'},
 						'om': {name: 'عمان',		capital: 'مسقط',	longitude: 58.54, latitude: 23.61, timeZone: 4, code: 'MUXX0003'},
 						'ps': {name: 'فلسطين',		capital: 'القدس',	longitude: 35.21, latitude: 31.78, timeZone: 3, code: 'ISXX0010'},
-						'qa': {name: 'قطر',			capital: 'الدوحة',	longitude: 51.53, latitude: 25.28, timeZone: 3, code: 'QAXX0003'},
+						'qa': {name: 'قطر',		capital: 'الدوحة',	longitude: 51.53, latitude: 25.28, timeZone: 3, code: 'QAXX0003'},
 						'sa': {name: 'السعودية',	capital: 'الرياض',	longitude: 46.71, latitude: 24.63, timeZone: 3, code: 'SAXX0017'},
 						'sd': {name: 'السودان',		capital: 'الخرطوم',	longitude: 32.53, latitude: 15.63, timeZone: 3, code: 'SUXX0002'},
 						'so': {name: 'الصومال',		capital: 'مقديشيو',	longitude: 45.35, latitude:  2.03, timeZone: 3, code: 'SOXX0002'},
