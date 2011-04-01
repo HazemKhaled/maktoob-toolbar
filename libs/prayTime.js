@@ -278,9 +278,9 @@ function PrayTimes(method) {
 		 * By Hazem Khaled
 		 */
 		var timeToPray = new Date();
-		timeToPray.setHours( hours );
+		timeToPray.setHours( Math.floor(time) );
 		timeToPray.setMinutes( minutes );
-		if ( new Date() < timeToPray && action != 'imsak' && action != 'sunrise' && action != 'midnight' && this.nextPray == null )
+		if ( new Date() < timeToPray && action != 'imsak' && action != 'sunrise' && action != 'sunset' && action != 'midnight' && this.nextPray == null )
 		{
 			this.nextPray = action;
 		}
